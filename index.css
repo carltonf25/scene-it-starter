@@ -14,3 +14,11 @@ body {
 	margin-top: 20px;
 }
 
+.movies-container{
+	flex-wrap: wrap;
+}
+
+.movie {
+	margin: .5em;
+	min-width: 4em;
+}
