@@ -11,9 +11,8 @@ $(function (){
             <div class="card movie" style="width: 18rem;">
                 <img class="card-img-top" src=${currentMovie.Poster} alt="Card image cap">
                 <div class="card-body">
-                <h5 class="card-title">${currentMovie.Title}</h5>
-                <p class="card-text">Released: ${currentMovie.Year}</p>
-                <a href="#" data-id = "${currentMovie.imdbID}" class="btn btn-primary add-btn">Add</a>
+                    <h5 class="card-title">${currentMovie.Title}</h5>
+                    <p class="card-text">Released: ${currentMovie.Year}</p>
                 </div>
             </div>
             `;
