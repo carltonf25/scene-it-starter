@@ -13,6 +13,7 @@ $(function (){
                 <div class="card-body">
                     <h5 class="card-title">${currentMovie.Title}</h5>
                     <p class="card-text">Released: ${currentMovie.Year}</p>
+                    
                 </div>
             </div>
             `;

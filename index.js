@@ -1,5 +1,4 @@
 $(function(){
-var watchlist = [];
 
     var renderMovies = function(movieArray){
         var finalHTML = "";
@@ -19,15 +18,19 @@ var watchlist = [];
         return finalHTML;
     }
 
-
-
-
-
-
     $('form').submit(function(e){
+        var searchString = $('.search-bar').val();
+        var urlEncodedSearchString = encodeURIComponent(searchString);
+        $.ajax({
+            url: "http://www.omdbapi.com/?apikey=3430a78&s=" + urlEncodedSearchString,
+            method: "GET",
+            success: function(response){
+                console.log(response);
+                var results = renderMovies(response.Search);
+                $('.movies-container').html(results);
+            }
+        });
         e.preventDefault();
-        var results = renderMovies(movieData);
-        $('.movies-container').html(results);
     });
 
     $('.movies-container').on('click', '.add-btn', function(e){
@@ -44,12 +47,4 @@ var watchlist = [];
         watchlistJSON = JSON.stringify(watchlist);
         localStorage.setItem('watchlist', watchlistJSON);
     });
-
-
-
-
-
-
-
-
 });
